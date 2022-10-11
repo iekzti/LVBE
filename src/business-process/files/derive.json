@@ -1,0 +1,83 @@
+{
+	"derive_1": {
+		"cond": [
+			"defined(Booking.bookingFare)"
+		],
+		"consqnt": [
+			"defined(Booking.Airfare)"
+		]
+	},
+	"derive_2": {
+		"cond": [
+			"defined(Booking.bookingFare)"
+		],
+		"consqnt": [
+			"defined(Booking.priceUSD)"
+		]
+	},
+	"derive_3": {
+		"cond": [
+			"defined(Booking.serviceClass)"
+		],
+		"consqnt": [
+			"defined(Booking.ServiceClass)"
+		]
+	},
+	"derive_4": {
+		"cond": [
+			"defined(Flight.airline)"
+		],
+		"consqnt": [
+			"defined(Flight.provider)"
+		]
+	},
+	"derive_5": {
+		"cond": [
+			"defined(Flight.airline)"
+		],
+		"consqnt": [
+			"defined(Flight.Airline)"
+		]
+	},
+	"derive_6": {
+		"cond": [
+			"defined(Flight.flightDistance)"
+		],
+		"consqnt": [
+			"defined(Flight.Distance)"
+		]
+	},
+	"derive_7": {
+		"cond": [
+			"defined(Flight.departureTime)"
+		],
+		"consqnt": [
+			"defined(Flight.departureDay)"
+		]
+	},
+	"derive_8": {
+		"cond": [
+			"defined(Flight.departureTime)"
+		],
+		"consqnt": [
+			"defined(Flight.DepartureSeason)"
+		]
+	},
+	"derive_9": {
+		"cond": [
+			"defined(Flight.departureTime)"
+		],
+		"consqnt": [
+			"defined(Flight.DepartureSession)"
+		]
+	},
+	"derive_10": {
+		"cond": [
+			"defined(Flight.departureTime)",
+			"defined(Booking.bookingTime)"
+		],
+		"consqnt": [
+			"defined(Booking.DifferentDays)"
+		]
+	}
+}

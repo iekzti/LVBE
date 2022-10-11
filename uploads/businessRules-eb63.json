@@ -1,0 +1,97 @@
+{
+    "businessRules": {
+        "br_1": {
+            "cond": [
+                "defined(Booking.bookingTime)",
+                "undefined(Booking.paymentTimeFromCustomer)",
+                "defined(currentTime)"
+            ],
+            "consqnt": [
+                "defined(Booking.bookingID)",
+                "defined(Booking.customerID)",
+                "defined(Booking.flightID)",
+                "defined(Booking.staffID)",
+                "defined(Booking.ticketStatus)",
+                "defined(Booking.serviceClass)",
+                "defined(Booking.addOns)",
+                "defined(Booking.seatNumber)",
+                "defined(Booking.bookingType)",
+                "defined(Booking.bookingTime)",
+                "defined(Booking.bookingFare)",
+                "defined(Booking.paymentType)",
+                "defined(Booking.paymentFare)",
+                "defined(Booking.paymentTimeFromCustomer)",
+                "defined(Booking.paymentTimeToProvider)",
+                "defined(Booking.refundsToCustomer)",
+                "defined(Booking.timeToRefund)",
+                "undefined(Booking.timeToCheckIn)",
+                "defined(Booking.timeToCancel)",
+                "defined(Flight.departureTime)",
+                "undefined(Booking.timeToReschedule)",
+                "defined(Booking.cancelFees)",
+                "defined(Booking.timeToSendTickets)"
+            ]
+        },
+        "br_2": {
+            "cond": [
+                "defined(Booking.ticketStatus)"
+            ],
+            "consqnt": [
+                "defined(Booking.bookingID)",
+                "defined(Booking.customerID)",
+                "defined(Booking.flightID)",
+                "defined(Booking.staffID)",
+                "defined(Booking.ticketStatus)",
+                "defined(Booking.serviceClass)",
+                "defined(Booking.addOns)",
+                "defined(Booking.seatNumber)",
+                "defined(Booking.bookingType)",
+                "defined(Booking.bookingTime)",
+                "defined(Booking.bookingFare)",
+                "undefined(Booking.paymentType)",
+                "undefined(Booking.paymentFare)",
+                "undefined(Booking.paymentTimeFromCustomer)",
+                "undefined(Booking.paymentTimeToProvider)",
+                "undefined(Booking.refundsToCustomer)",
+                "undefined(Booking.timeToRefund)",
+                "undefined(Booking.timeToCheckIn)",
+                "undefined(Booking.timeToCancel)",
+                "undefined(Booking.timeToReschedule)",
+                "undefined(Booking.cancelFees)",
+                "undefined(Booking.timeToSendTickets)"
+            ]
+        },
+        "br_3": {
+            "cond": [
+                "defined(Flight.departureTime)",
+                "defined(currentTime)",
+                "defined(Booking.flightID)",
+                "defined(Flight.flightID)"
+            ],
+            "consqnt": [
+                "defined(Booking.bookingID)",
+                "defined(Booking.customerID)",
+                "defined(Booking.flightID)",
+                "defined(Booking.staffID)",
+                "defined(Booking.ticketStatus)",
+                "defined(Booking.serviceClass)",
+                "defined(Booking.addOns)",
+                "defined(Booking.seatNumber)",
+                "defined(Booking.bookingType)",
+                "defined(Booking.bookingTime)",
+                "defined(Booking.bookingFare)",
+                "undefined(Booking.paymentType)",
+                "undefined(Booking.paymentFare)",
+                "undefined(Booking.paymentTimeFromCustomer)",
+                "undefined(Booking.paymentTimeToProvider)",
+                "undefined(Booking.refundsToCustomer)",
+                "undefined(Booking.timeToRefund)",
+                "undefined(Booking.timeToCheckIn)",
+                "undefined(Booking.timeToCancel)",
+                "undefined(Booking.timeToReschedule)",
+                "undefined(Booking.cancelFees)",
+                "undefined(Booking.timeToSendTickets)"
+            ]
+        }
+    }
+}

@@ -1,0 +1,123 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  email String @unique
+  hash  String
+
+  firstName String?
+  lastName  String?
+  phone     String?
+  birth     DateTime?
+  address   String?
+
+  files               File[]
+  businessProcesses   BusinessProcess[]
+  classificationRules ClassificationRule[]
+
+  @@map("users")
+}
+
+model FileType {
+  id       Int      @id @default(autoincrement())
+  createAt DateTime @default(now())
+  updateAd DateTime @default(now())
+
+  name String @unique
+  File File[]
+}
+
+model File {
+  id        Int      @id @default(autoincrement())
+  createAt  DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  name     String
+  fileName String
+  url      String?
+
+  fileType   FileType @relation(fields: [fileTypeId], references: [id])
+  fileTypeId Int
+
+  User   User? @relation(fields: [userId], references: [id])
+  userId Int?
+}
+
+model BusinessProcess {
+  id        Int      @id @default(autoincrement())
+  createAt  DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  name  String
+  topic String
+
+  fileTaskName            String
+  fileTaskPath            String
+  fileTaskAfterRemovePath String?
+
+  fileBPMNName            String
+  fileBPMNPath            String
+  fileBPMNAfterMovePath   String?
+  fileBPMNAfterRemovePath String?
+
+  User   User? @relation(fields: [userId], references: [id])
+  userId Int?
+
+  BusinessRule BusinessRule?
+  tasks        Task[]
+}
+
+model Task {
+  id        Int      @id @default(autoincrement())
+  createAt  DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  name String
+  time Float?
+
+  BusinessProcess   BusinessProcess? @relation(fields: [businessProcessId], references: [id])
+  businessProcessId Int?
+}
+
+model ClassificationRule {
+  id        Int      @id @default(autoincrement())
+  createAt  DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  name  String
+  topic String
+
+  fileName String
+  filePath String
+
+  User   User? @relation(fields: [userId], references: [id])
+  userId Int?
+}
+
+model BusinessRule {
+  id        Int      @id @default(autoincrement())
+  createAt  DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  name  String
+  topic String
+
+  fileName String
+  filePath String
+
+  businessProcess   BusinessProcess @relation(fields: [businessProcessId], references: [id], onDelete: Cascade)
+  businessProcessId Int             @unique
+}

@@ -1,0 +1,51 @@
+If defined(Booking.Airfare) && defined(Flight.DepartureDay) && defined(Flight.Distance) && defined(Flight.DepartureSession) && defined(Flight.Airline) && defined(Flight.DepartureSeason) && defined(Booking.ServiceClass) then defined(customerAcceptance)
+
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Friday" && Flight.DepartureSession = "Afternoon" then customerAcceptance = "No"
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Friday" && Flight.DepartureSession = "Evening" then customerAcceptance = "Yes"
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Friday" && Flight.DepartureSession = "Morning" then customerAcceptance = "Yes"
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Monday" && Flight.Distance >= 300 && Flight.Distance < 700 then customerAcceptance = "No"
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Monday" && Flight.Distance >= 700 && Flight.Distance < 1000 then customerAcceptance = "No"
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Monday" &&  Flight.Distance < 350 then customerAcceptance = "Yes"
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Monday" && Flight.Distance >= 1000 then customerAcceptance = "No"
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Saturday" then customerAcceptance = "No"
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Thurday" && Flight.DepartureSession = "Afternoon" then customerAcceptance = "Yes"
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Thurday" && Flight.DepartureSession = "Evening" then customerAcceptance = "No"
+if Booking.Airfare = [15,30) && Flight.DepartureDay = "Thurday" && Flight.DepartureSession = "Morning" then customerAcceptance = "No"
+if Booking.Airfare = [30,50) && Flight.DepartureDay = "Friday" && Flight.Airline = "BL" then customerAcceptance = "Yes"
+if Booking.Airfare = [30,50) && Flight.DepartureDay = "Friday" && Flight.Airline = "VJ" then customerAcceptance = "Yes"
+if Booking.Airfare = [30,50) && Flight.DepartureDay = "Friday" && Flight.Airline = "VNA" then customerAcceptance = "No"
+if Booking.Airfare = [30,50) && Flight.DepartureDay = "Monday" then customerAcceptance = "No"
+if Booking.Airfare = [30,50) && Flight.DepartureDay = "Saturday" && Flight.Airline = "BL" then customerAcceptance = "No"
+if Booking.Airfare = [30,50) && Flight.DepartureDay = "Saturday" && Flight.Airline = "VJ" then customerAcceptance = "No"
+if Booking.Airfare = [30,50) && Flight.DepartureDay = "Saturday" && Flight.Airline = "VNA" then customerAcceptance = "Yes"
+if Booking.Airfare = [30,50) && Flight.DepartureDay = "Thurday" then customerAcceptance = "No"
+if Booking.Airfare = [50,75) && Flight.DepartureSeason = "Fall" then customerAcceptance = "No"
+if Booking.Airfare = [50,75) && Flight.DepartureSeason = "Spring" then customerAcceptance = "No"
+if Booking.Airfare = [50,75) && Flight.DepartureSeason = "Summer" then customerAcceptance = "No"
+if Booking.Airfare = [50,75) && Flight.DepartureSeason = "Winter" && Flight.Airline = "BL" then customerAcceptance = "Yes"
+if Booking.Airfare = [50,75) && Flight.DepartureSeason = "Winter" && Flight.Airline = "VJ" then customerAcceptance = "No"
+if Booking.Airfare = [75,100) && Flight.DepartureSeason = "Fall" then customerAcceptance = "No"
+if Booking.Airfare = [75,100) && Flight.DepartureSeason = "Spring" then customerAcceptance = "No"
+if Booking.Airfare = [75,100) && Flight.DepartureSeason = "Summer" then customerAcceptance = "No"
+if Booking.Airfare = [50,75) && Flight.DepartureSeason = "Winter" && Flight.DepartureSession = "Evening" then customerAcceptance = "No"
+if Booking.Airfare = [50,75) && Flight.DepartureSeason = "Winter" && Flight.DepartureSession = "Morning" then customerAcceptance = "Yes"
+if Booking.Airfare = [0,15) && Flight.DepartureSeason = "Fall" then customerAcceptance = "No"
+if Booking.Airfare = [0,15) && Flight.DepartureSeason = "Spring" then customerAcceptance = "Yes"
+if Booking.Airfare = [0,15) && Flight.DepartureSeason = "Summer" && Booking.ServiceClass = "business class" then customerAcceptance = "No"
+if Booking.Airfare = [0,15) && Flight.DepartureSeason = "Summer" && Booking.ServiceClass = "economy flexi" then customerAcceptance = "Yes"
+if Booking.Airfare = [0,15) && Flight.DepartureSeason = "Summer" && Booking.ServiceClass = "economy saver" then customerAcceptance = "No"
+if Booking.Airfare = [0,15) && Flight.DepartureSeason = "Winter" then customerAcceptance = "No"
+if Booking.Airfare = [100,10000) then customerAcceptance = "No"
+
+
+
+
+
+
+
+
+
+
+
+
+

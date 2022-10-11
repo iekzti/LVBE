@@ -1,0 +1,15 @@
+{
+	"cond": [
+		"defined(Booking.Airfare)",
+		"defined(Flight.DepartureDay)",
+		"defined(Flight.Distance)",
+		"defined(Flight.DepartureSession)",
+		"defined(Flight.Airline)",
+		"defined(Flight.DepartureSeason)",
+		"defined(Booking.ServiceClass)"
+	],
+	"consqnt": [
+		"defined(CustomerSupport.customerAcceptance)",
+		"defined(CustomerSupport.customerDecision)"
+	]
+}

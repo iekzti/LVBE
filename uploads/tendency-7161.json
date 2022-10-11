@@ -1,0 +1,15 @@
+{
+	"cond": [
+		"defined(Flight.provider)",
+		"defined(Booking.ServiceClass)",
+		"defined(Booking.priceUSD)",
+		"defined(Flight.departureDay)",
+		"defined(Flight.DepartureSeason)",
+		"defined(Booking.DifferentDays)"
+	],
+	"consqnt": [
+		"defined(Booking.tendency)",
+		"defined(Booking.paymentFare)",
+		"defined(Booking.bookingFare)"
+	]
+}
